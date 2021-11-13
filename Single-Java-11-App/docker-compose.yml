@@ -1,0 +1,18 @@
+---
+    version: "3.4"
+    
+    services:
+    ############################### Reverse Proxy Service ####################################
+      app_1:
+        build: .
+        image: app-1
+        container_name: app_1
+        ports: 
+          - 20001:20001
+        environment:
+          AWS_ACCESS_KEY_ID: anyKey
+          AWS_SECRET_ACESS_KEY: anySecret
+        volumes:
+          - ${APP_1_PATH}:/app
+          - ./local/.m2:/root/.m2
+        tty: true
