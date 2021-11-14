@@ -4,7 +4,9 @@
     services:
     ############################### Java App 1 ####################################
       app_1:
-        build: .
+        build:
+            context: ..
+            dockerfile: Dockerfile/Java-11/Dockerfile
         image: app-1
         container_name: app_1
         ports: 
@@ -14,5 +16,5 @@
           AWS_SECRET_ACESS_KEY: anySecret
         volumes:
           - ${APP_1_PATH}:/app
-          - ./local/.m2:/root/.m2
+          - ../local/.m2:/root/.m2
         tty: true
