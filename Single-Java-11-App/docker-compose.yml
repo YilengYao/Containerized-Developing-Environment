@@ -6,7 +6,7 @@
       app_1:
         build:
             context: ..
-            dockerfile: Dockerfile/Java-11/Dockerfile
+            dockerfile: Dockerfiles/Java-11/Dockerfile
         image: app-1
         container_name: app_1
         ports: 
